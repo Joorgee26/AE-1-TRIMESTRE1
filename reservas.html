@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Agencia de Viajes 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function confirmarReserva(event) {
+            event.preventDefault();
+            
+
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+            const telefono = document.getElementById("telefono").value;
+            const destino = document.getElementById("destino").value;
+            const fecha = document.getElementById("fecha").value;
+            const personas = document.getElementById("personas").value;
+
+  
+            if (!nombre || !email || !telefono || !destino || !fecha || !personas) {
+                alert("⚠️ Por favor completa todos los campos.");
+                return;
+            }
+
+            
+            alert(`✅ ¡Reserva confirmada!\n\nNombre: ${nombre}\nDestino: ${destino}\nFecha: ${fecha}\nPersonas: ${personas}\n\nGracias por confiar en Agencia de Viajes 2025.`);
+            
+            document.getElementById("formReserva").reset();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Agencia de Viajes 2025</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="reservas.html" class="activo">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Formulario de Reserva </h2>
+        <p>Completa el formulario a continuación para reservar tu viaje. Todos los campos son obligatorios.</p>
+
+        <div class="reserva-container">
+            <form id="formReserva" class="formulario-reserva" onsubmit="confirmarReserva(event)">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" placeholder="Ej: Paco Pérez" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" placeholder="Ej: Paco@email.com" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Ej: +34 612345678" required>
+
+                <label for="destino">Destino:</label>
+                <input type="text" id="destino" placeholder="Ej: París" required>
+
+                <label for="fecha">Fecha de viaje:</label>
+                <input type="date" id="fecha" required>
+
+                <label for="personas">Número de personas:</label>
+                <input type="number" id="personas" min="1" max="20" value="1" required>
+
+                <button type="submit" class="boton-reserva">Confirmar Reserva</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Agencia de Viajes 2025</p>
+    </footer>
+</body>
+</html>

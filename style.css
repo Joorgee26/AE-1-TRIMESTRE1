@@ -1,0 +1,255 @@
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #e57373;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #c62828;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #b71c1c;
+}
+
+nav .activo {
+    background-color: #b71c1c;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.inicio img {
+    width: 60%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: #f0f0f0;
+    margin-top: 30px;
+}
+
+
+.panel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 220px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #e57373;
+    margin-bottom: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.boton {
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #c62828;
+}
+
+
+.reserva-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.formulario-reserva {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-reserva label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.boton-reserva {
+    background-color: #e57373;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s, transform 0.2s;
+}
+
+.boton-reserva:hover {
+    background-color: #c62828;
+    transform: translateY(-2px);
+}
+
+main h2 {
+    color: #e57373;
+    margin-top: 20px;
+}
+
+main p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+
+.carrusel {
+    position: relative;
+    max-width: 700px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.slides img {
+    width: 100%;
+    display: none;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slides img.active {
+    display: block;
+    opacity: 1;
+}
+
+
+.carrusel .prev,
+.carrusel .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.carrusel .prev:hover,
+.carrusel .next:hover {
+    background-color: rgba(0,0,0,0.7);
+    transform: scale(1.1);
+}
+
+.carrusel .prev {
+    left: 15px;
+}
+
+.carrusel .next {
+    right: 15px;
+}
+
+
+.carrusel-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+
+.carrusel-dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carrusel-dots span.active {
+    background-color: #e57373;
+}

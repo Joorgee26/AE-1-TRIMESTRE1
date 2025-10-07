@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Agencia de Viajes 2025</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="inicio">
+        <h2>Bienvenido a la Agencia de Viajes 2025</h2>
+        <p>Explora los mejores destinos, descubre nuestras ofertas y reserva tu viaje soñado.</p>
+
+        <!-- CARRUSEL -->
+        <div class="carrusel">
+            <div class="slides">
+                <img src="c:\Users\CampusFP\Downloads\istockphoto-598919748-612x612.jpg" alt="París">
+                <img src="c:\Users\CampusFP\Downloads\Tavares.Forum_.Romanum.redux_.jpg" alt="Roma">
+                <img src="c:\Users\CampusFP\Downloads\carteles-publicitarios-times-square.avif" alt="Nueva York">
+
+            </div>
+            <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© Agencia de Viajes 2025</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        let indice = 0;
+        const slides = document.querySelectorAll(".slides img");
+
+        // Crear puntos indicadores
+        const dotsContainer = document.createElement("div");
+        dotsContainer.classList.add("carrusel-dots");
+        document.querySelector(".carrusel").appendChild(dotsContainer);
+
+        const puntos = [];
+        slides.forEach((_, i) => {
+            const span = document.createElement("span");
+            span.addEventListener("click", () => {
+                indice = i;
+                mostrarSlide(indice);
+            });
+            dotsContainer.appendChild(span);
+            puntos.push(span);
+        });
+
+        function mostrarSlide(n) {
+            if (n >= slides.length) indice = 0;
+            if (n < 0) indice = slides.length - 1;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                puntos[i].classList.remove("active");
+            });
+
+            slides[indice].classList.add("active");
+            puntos[indice].classList.add("active");
+        }
+
+        function cambiarSlide(n) {
+            indice += n;
+            mostrarSlide(indice);
+        }
+
+        mostrarSlide(indice);
+
+        // Cambio automático cada 5 segundos
+        setInterval(() => {
+            cambiarSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
